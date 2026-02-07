@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Resume | ResumeAI</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            margin:0;
+            font-family:'Poppins', sans-serif;
+            background:linear-gradient(120deg,#a1c4fd,#c2e9fb,#fbc2eb);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .container{
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            width:420px;
+            text-align:center;
+            box-shadow:0px 10px 30px rgba(0,0,0,0.15);
+        }
+
+        h2{
+            color:#5a4fcf;
+            font-weight:700;
+            font-style:italic;
+        }
+
+        p{
+            font-size:14px;
+            color:#555;
+            font-style:italic;
+        }
+
+        input[type="file"]{
+            margin:20px 0;
+            padding:10px;
+            width:100%;
+            border:2px dashed #5a4fcf;
+            border-radius:10px;
+            cursor:pointer;
+        }
+
+        textarea{
+            width:100%;
+            padding:10px;
+            border-radius:10px;
+            border:1px solid #ccc;
+            font-family:'Poppins', sans-serif;
+        }
+
+        button{
+            padding:12px 30px;
+            border:none;
+            border-radius:30px;
+            background:linear-gradient(90deg,#ff9a9e,#667eea);
+            color:white;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            transform:scale(1.05);
+        }
+
+        .back{
+            display:block;
+            margin-top:20px;
+            text-decoration:none;
+            color:#5a4fcf;
+            font-weight:500;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>📄 Upload Resumes</h2>
+    <p>Upload multiple PDF resumes to analyze using AI & NLP</p>
+
+    <!-- SINGLE FORM -->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+
+        <!-- MULTIPLE FILE UPLOAD -->
+        <input type="file" name="resumes" accept=".pdf" multiple required>
+
+        <textarea name="job_desc" rows="6"
+            placeholder="Paste Job Description here..."
+            required>
+        </textarea>
+
+        <br><br>
+
+        <button type="submit">Analyze Resumes</button>
+    </form>
+
+    <a class="back" href="/">⬅ Back to Home</a>
+</div>
+
+</body>
+</html>
